@@ -1,8 +1,10 @@
 ---
 title: "Project1 The Role of Religious Beliefs in Voting Behaviors"
 output:
-  pdf_document: default
+  html_document:
+    df_print: paged
   html_notebook: default
+  pdf_document: default
 ---
 
 ## Introduction
@@ -11,8 +13,10 @@ America has always been a country with various religious beliefs and free religi
 Some questions that are of our interests are as the following:
 
 1. What was the church activity like in 1960?
+
 2. What was the religion composition in 1960?
-3. How does various religious beliefs impact how people vote?
+
+3. How did various religious beliefs impact how people vote?
 
 In order to explore answers to these questions, I will be performing some data cleaning using appropriate R packages, check on basic data statistics and plotting of variables of interest.
 
@@ -184,8 +188,14 @@ ggplot(df3, aes(as.factor(church_pref),
 ```
 Among Protestants, the number of people who identify themselves as republicans exceed considerably every other party besides Democrat. While among Catholic believers, the dominant political party identification belongs to Democrat.
 
-## Summary
-The three plots show that the religious composition of each president candidate or political party does not seem to be drastically different. Among each religion group, the number of people who are in favor of the Democratic party and candidate is the largest. Protestants consisted the major part of the vote as previously identified. However, a further examination on the composition of religious believers within each political group gives a little bit more information regarding how Catholics and Protestants differ in their political views. Catholic believers seem to always have a dominantly strong preference towards the Demoratic party and candidates, but the number of Protestant believers who support Demoractic party/candidates and Republican part/candidtaes does not seem to differ too much.
+The three plots show that the religious composition of each president candidate or political party does not seem to be drastically different. Among each religion group, the number of people who are in favor of the Democratic party and candidate is the largest. Protestants consisted the major part of the vote as previously identified. However, a further examination on the composition of religious believers within each political group gives a little bit more information regarding how Catholics and Protestants differ in their political views. Catholic believers seem to always have a dominantly strong preference towards the Demoratic party and candidates, but the number of Protestant believers who support the Demoractic party/candidates and the Republican party/candidtaes does not seem to differ too much.
 
+## Conclusion
+The three questions could be answered in the following way:
 
+1. Most people who participated in the survey went to church to some extent, either regularly or sometimes, which means religious activity was active in 1960.
+
+2. Survey participants' religious beliefs mainly consist of Protestant and Catholic, with a few Jewish and others that were not clearly specified in the survey. 
+
+3. All religious groups have the strongest preference towards the Democratic party and its candidate. However, there is a considerably bigger difference between the number of voters for the Democrat and the Republican among Catholic believers than that among Protestant believers. 
 
