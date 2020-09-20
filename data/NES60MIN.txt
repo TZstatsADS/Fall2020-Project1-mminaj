@@ -1,0 +1,1281 @@
+Version 01 Codebook                                                           
+-------------------                                                           
+CODEBOOK VARIABLE DOCUMENTATION                                               
+1960 MINOR ELECTION STUDY                                                     
+(1960.S)                                                                      
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                        NES 1960 MINOR STUDY                                  
+                          VARIABLE ENTRIES                                    
+                                                                              
+This file should be opened in fixed font, 10 pitch or smaller.                
+Codebook introductory material and appendix material are in                   
+separate files.                                                               
+----------------------------------------------------------------              
+                                                                              
+NOTE ON VARIABLE NAMING:                                                      
+                                                                              
+The variable name references used in NES Study codebooks do not include       
+the "V" prefix found in all variable names used within the released           
+SAS and SPSS data definition files (.sas and .sps files).                     
+                                                                              
+For example, "VAR 920001" and "VAR VERSION" in Study codebooks refer to       
+V920001 and VVERSION in the study data definition files.                      
+                                                                              
+                                                                              
+VARIABLE 'NUMBERING':                                                         
+                                                                              
+'Numbered' variables in NES timeseries datasets and in Pilot datasets         
+(except the 1998 Pilot) comply with the following format:                     
+                                                                              
+     2-digit year prefix  +  4 digits  +  [opt] 1-char suffix.                
+                                                                              
+Examples:  1978 Post variable V780002; 1983 Pilot variable V832101.           
+Note that for datasets including data from multiple studies, the 2-digit      
+year prefix corresponds to the appropriate study year to which the            
+variable is associated; for example, the 1983 Pilot dataset also includes     
+1982 timeseries variables, for which the 2-digit prefix is 82.                
+                                                                              
+Non-time-series studies other than Pilots use 2-character mnemonic            
+prefixes, for example variable VPS0048 in the 1988-1990-1992 Pooled           
+Senate Study dataset.                                                         
+                                                                              
+                                                                              
+SPECIAL NOTE ON COLUMN LOCATIONS:                                             
+                                                                              
+Some numeric variables use coding schemes that allow for code values          
+having a varying number of digits. In such instances, the number of           
+of columns corresponding to the variable in the data file [.dat file]         
+and in the column specifications will be the width of the maximum value       
+occurring in the actual data, rather than the maximum width allowable         
+by the coding scheme.  For example, if codes 01-12 are allowed for a          
+numeric variable but all values in the data are less than 10, then the        
+number of columns corresponding to the variable within the ASCII data         
+file will be 1.                                                               
+                                                                              
+                                                                              
+==============================                                                
+VAR VERSION   NES VERSION NUMBER                                              
+              COLUMNS 1    - 2                                                
+              NUMERIC                                                         
+              NO MISSING DATA CODES                                           
+                                                                              
+                 NES VERSION NUMBER                                           
+                 ..................                                           
+                                                                              
+==============================                                                
+VAR DSETNO    NES DATASET NUMBER                                              
+              COLUMNS 3    - 8                                                
+              CHARACTER                                                       
+              NO MISSING DATA CODES                                           
+                                                                              
+                 NES DATASET NUMBER                                           
+                 ..................                                           
+                                                                              
+                 This is dataset 1960.S                                       
+                                                                              
+==============================                                                
+VAR MN0001    NAME-ICPSR ARCHIVE NUMBER                                       
+              COLUMNS 9    - 12                                               
+              CHARACTER                                                       
+              NO MISSING DATA CODES                                           
+                                                                              
+        ICPSR ARCHIVE NUMBER                                                  
+                                                                              
+==============================                                                
+VAR MN0002    NAME-INTERVIEW NUMBER                                           
+              COLUMNS 13   - 16                                               
+              NUMERIC                                                         
+              NO MISSING DATA CODES                                           
+                                                                              
+        INTERVIEW NUMBER                                                      
+                                                                              
+==============================                                                
+VAR MN0003    NAME-PRIMARY SAMPLING UNIT                                      
+              COLUMNS 17   - 19                                               
+              NUMERIC                                                         
+              NO MISSING DATA CODES                                           
+                                                                              
+        PRIMARY SAMPLING UNIT (PSU)                                           
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+        /THE PSU CODE IS THE FIRST AND SECOND DIGIT PLUS EITHER THE           
+        THIRD OR FOURTH DIGIT LISTED BELOW, E.G. BALTIMORE CITY MAY           
+        BE CODED AS 301 OR 302./                                              
+                                                                              
+   301-2. BALTIMORE CITY    INDEPENDENT CITY                                  
+   303-4. BAITIMORE SUBURBS BALTINORE, MD.                                    
+   271-2. BOSTON CITY       SUFFOLK, MASS.                                    
+   273-4. BOSTON SUBURBS    HIDDLESEX, Mass.                                  
+   273-4. BOSTON SUBURBS    NORFOLK, MASS.                                    
+   101-2. CHICAGO CITY, NORTH    COOK, ILL.                                   
+   111-2. CHICAGO CITY, SOUTH    COOK, ILL.                                   
+   103-4. CHICAGO SUBURBS   COOK, ILL.                                        
+   103-4. CHICAGO SUBURBS   KANES, ILL.                                       
+   103-4. CHICAGO SUBURBS   LAKE, IND.                                        
+   103-4. CHICAGO SUBURBS   LAKE, ILL.                                        
+   121-2. CLEVELAND CITY    CUYAHOGA, OHIO                                    
+   123-4. CLEVELAND SUBURBS CUYAHOGA, OHIO                                    
+   131-2. DETROIT CITY      WAYNE, MICH.                                      
+   133-4. DETROIT SUBURBS   WAYNE, MICH.                                      
+   133-4. DETRCIT SUBURBS   OAKLAND, MICH.                                    
+   133-4. DETROIT SUBURBS   MACOMB, MICH.                                     
+   001-2. LOS ANGELES CITY  LOS ANGELES, CAL.                                 
+   003-4. LOS ANGELES SUBURBS    LOS ANGELES, CAL.                            
+   003-4. LOS ANGELES SUBURBS    ORANGE, CAL.                                 
+   201-2. NEW YORK CITY-BRONX    BRONX, N.Y.                                  
+   211-2. NEW YORK CITY-BROOKLYN KINGS, N.Y.                                  
+   221-2. NEW YORK CITY-MANHATTAN     NEW YORK, N.Y.                          
+   201-2. NEW YORK CITY-QUEENS   QUEENS, N.Y.                                 
+   231-2. NEW YORK CITY-RICHMOND RICHMOND, N.Y.                               
+   241-2. JERSEY CITY, N.J. HUDSON, N.J.                                      
+   241-2. NEWARK, N.J.      ESSEX, N.J.                                       
+   233-4. NEW YORK SUBURBS  NASSAU, N.Y.                                      
+   233-4. NEW YORK SUBURBS  WESTCHESTER, N.Y.                                 
+   233-4. NEW YORK SUBURBS  FAIRFIELD, CONN.                                  
+   233-4. NEW YORK SUBURBS  SUFFOLK, N.Y.                                     
+   243-4. NEN JERSEY SUBURBS     UNION, N.J.                                  
+   243-4. NEW JERSEY SUBURBS     HUDSON, N.J.                                 
+   243-4. NEW JERSEY SUBURBS     ESSEX, N.J.                                  
+   243-4. NEW JERSEY SUBURBS     BERGEN, N.J.                                 
+   281-2. PHILADELPHIA CITY PHILADELPHIA, PA.                                 
+   283-4. PHILADELPHIA SUBURBS   DELAWARE, PA.                                
+   283-4. PHILADELPHIA SUBURBS   BUCKS, PA.                                   
+   283-4. PHILADELPHIA SUBURBS   MONTGOMERY, PA.                              
+   283-4. PHILADELPHIA SUBURBS   CAMDEN, N.J.                                 
+   291-2. PITTSBURGH CIIY   ALLEGHENY, PA.                                    
+   293-4. PITTSBURGH SUBURBS     ALLEGHENY, PA.                               
+   293-4. PITTSBURGH SUBURBS     BEAVER, PA.                                  
+   293-4. PITTSBURGH SUBURBS     WASHINGTON, PA                               
+   141-2. ST. LOUIS CITY    INDEPENDENT CITY                                  
+   143-4. ST. LOUIS SUBURBS ST. CLAIR, ILL.                                   
+   143-4. ST. LOUIS SUBURBS ST. LOUIS, MO.                                    
+   143-4. ST. LOUIS SUBURBS MADISON, ILL                                      
+   011-2. SAN FRANCISCO CITY     SAN FRANCISCO, CAL.                          
+   011-2. OAKLAND CITY      ALAMEDA, CAL.                                     
+   013-4. SAN FRANCISCO SUBURBS  ALAMEDA, CAL.                                
+   013-4. SAN FRANCISCO SUBURBS  SAN HATED, CAL.                              
+   013-4. SAN FRANCISCO SUBURBS  CONTRA COSTA, CAL.                           
+   311-2. WASHINGTON CITY   DISTRICT OF COLUMBIA                              
+   313-4. WASHINGTON SUBURB PRINCE GEORGES, MD.                               
+   313-4. WASHINGTON SUBURB FAIRFAX, VA.                                      
+   313-4. WASHINGTON SUBURB MONTGOMERY, MD.                                   
+   313-4. WASHINGTON SUBURB ARLINGTON, VA.                                    
+   677-8. ADAIR        ADAIR, MO.                                             
+   627-8. BARRON       BARRON, WIS.                                           
+   725-6. BLACK HAWK   BLACK HAWK, IOWA                                       
+   725-6. BLACK HAWK   BUCHANAN, IOWA                                         
+   477-8. BOYD         BOYD, KY.                                              
+   477-8. BOYD         GREENUP, KY.                                           
+   715-6. BUTLER       BUTLER, OHIO                                           
+   715-6. BUTLER       WARREN, OHIO                                           
+   527-8. CLARK        CLARK, ARK.                                            
+   917-8. CORTLAND          CORTLAND, N.Y.                                    
+   637-8. CRANFORD          CRANFORD, IOWA                                    
+   507-8. EASI CARROLL EAST CARROLL, LA.                                      
+   497-8. ERATH        ERATH, TEX                                             
+   975-6. FAIRFIELD    FAIRFIELD, CONN.                                       
+   425-6. FORSYTH      FORSYTH, N.C                                           
+   425-6. FORSYTH      STOKES, N.C.                                           
+   617-8. FRANKLIN          FRANKLIN, NEB.                                    
+   735-6. GENESSEE          GENESEE, MICH.                                    
+   547-8. GNINNETT          GWINNETT, GA.                                     
+   395-6. HARRIS       HARRIS, TEX                                            
+   765-6. HENNEPIN          HENNEPIN, MINN.                                   
+   765-6. HENNEPIN          RAMSEY, MINN.                                     
+   577-8. HICKMAN      HICKMAN, TENN.                                         
+   857-8. IDAHO        IDAHO, ID.                                             
+   587-8. JEFF DAVIS   JEFF DAVIS, GA.                                        
+   405-6. JEFFERSON    JEFFERSON, KY.                                         
+   687-8. KNOX         KNOX, OHIO                                             
+   487-8. LEON         LEON, FLA.                                             
+   705-6. LORAIN       LORAIN, OHIO                                           
+   965-6. LUZERNE      LUZERNE, PA.                                           
+   937-8. LYCOMING          LYCOMING, PA.                                     
+   755-6. MARION       MARION, IND.                                           
+   837-8. MERCED       MERCED, CAL.                                           
+   695-6. MINNEHAHA    MINNEHAHA, S.D.                                        
+   695-6. MINNEHAHA    TURNER, S.D.                                           
+   647-8. MITCHELL          MITCHELL, KAN.                                    
+   445-6. MONTGOMERY   MONTGOMERY, ALA.                                       
+   445-6. MONTGOMERY   ELMORE, ALA.                                           
+   745-6. MONTGOMERY, OH    MONTGOMERY, OHIO                                  
+   517-8. MUHLENBERG   MUHLENBERG, KY.                                        
+   947-8. NEW LONDON   NEW LONDON, CONN.                                      
+   995-6. ONONDAGA          ONONDAGA, N.Y.                                    
+   657-8. PAGE         PAGE, IOWA                                             
+   815-6. PIERCE       PIERCE, WASH.                                          
+   467-8. PITT         PITT, N.C.                                             
+   825-6. PUEBLO       PUEBLO, COLO.                                          
+   415-6. PULASKI, ARK.     PULASKI, ARK.                                     
+   415-6. PULASKI, ARK.     SALINE, ARK.                                      
+   557-8- PULASKI, VA. PULASKI, VA.                                           
+   955-6. RENSSELAER   RENSSELAER, N.Y                                        
+   435-6. RICHLAND          RICHLAND, S.C.                                    
+   435-6. RICHLAND          LEXINGTON, S.C.                                   
+   667-8. ST. JOSEPH   ST. JOSEPH, MICH.                                      
+   805-6. SAN DIEGO    SAN DIEGO, CAL.                                        
+   537-8. SARASOTA          SARASOTA, FLA.                                    
+   537-8. SARASOTA          MANATEE, FLA.                                     
+   847-8. SOCORRO      SOCORRO, N. M.                                         
+   907-8. SUSQUEHANNA  SUSQUEHANNA, PA.                                       
+   457-8. TAYLOR       TAYLOR, TEX                                            
+   457-8. TAYLOR       JONES, TEX                                             
+   607-8. TRAVERSE          TRAVERSE, MINN.                                   
+   567-8. WALTHALL          WALTHALL, MISS.                                   
+   597-8. WATAUGA      WATAUGA, N.C.                                          
+   985-6. WORCESTER    WORCESTER, MASS.                                       
+   927-8. YORK         YORK, MAINE                                            
+   999. NOT ASCERTAINED                                                       
+                                                                              
+==============================                                                
+VAR MN0004    NAME-SIZE OF PLACE                                              
+              COLUMNS 20   - 20                                               
+              NUMERIC                                                         
+              NO MISSING DATA CODES                                           
+                                                                              
+        SIZE OF PLACE CODE                                                    
+                                                                              
+        SELF-REPRESENTING PSUs                                                
+   195  1. CENTRAL CITIES                                                     
+   27   2. SUBURBS 50,000 POPULATION AND OVER                                 
+   125  3. SUBURBS 2,500 THROUGH 49,999 PLUS OTHER PLACES IN CENSUS           
+        'URBANIZED AREAS'                                                     
+   58   4. ALL OTHER SUBURBS (RURAL)                                          
+        NON-SELF-REPRESENTING PSU's                                           
+   209  5. CITIES OF 50,000 AND OVER                                          
+   82   6. PLACES 2,500 THROUGH 49,999 POPULATION, PLUS ANY OTHER             
+        PLACES CLASSIFIED AS URBAN BY THE CENSUS BUREAU                       
+   214  7. PLACES 2,500 THROUGH 49,999                                        
+   64   8. CENSUS NAME PLACES UNDER 2,500                                     
+   115  9. REMAINDER OF SAMPLE COUNTY IN SMA                                  
+   301  0. REMAINDER OF PSU NOT IN SMA                                        
+                                                                              
+==============================                                                
+VAR MN0005    NAME-BELT CODE                                                  
+              COLUMNS 21   - 21                                               
+              NUMERIC                                                         
+              NO MISSING DATA CODES                                           
+        DK 1 COL 13                                                           
+                                                                              
+        BELT CODE                                                             
+   195  1. CENTRAL CITIES OF 12 LARGEST SMAs                                  
+   201  2. CENTRAL CITIES OF OTHER SMA'S                                      
+   191  3. SUBURBAN AREAS OF 12 LARGEST SMA'S                                 
+   214  4. SUBURBAN AREAS OF OTHER SMA'S                                      
+   258  5. ADJACENT AREAS                                                     
+   331  6. OUTLYING AREAS                                                     
+                                                                              
+==============================                                                
+VAR MN0006    NAME-DATE OF INTERVIEW                                          
+              COLUMNS 22   - 22                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+        DATE OF INTERVIEW                                                     
+                                                                              
+   174  1. OCTOBER 24TH OF EARLIER                                            
+   300  2. OCTOBER 25TH - 31ST                                                
+   307  3. NOVEMBER 1ST - 7TH                                                 
+   159  4. NOVEMBER 8TH - 14TH                                                
+   214  5. NOVEMBER 15TH - 21ST                                               
+   160  6. NOVEMBER 22ND - 28TH                                               
+   64   7. NOVEMBER 29TH OR AFTER                                             
+   12   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0007    NAME-WHO IS RESPONDENT                                          
+              COLUMNS 23   - 23                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+        WHO IS R.                                                             
+                                                                              
+   840  1. R IS HEAD OF FAMILY                                                
+   525  2. R IS WIFE OF HEAD OF FAMILY                                        
+   3    7. OTHER                                                              
+   22   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0008    NAME-NUMBER OF ADULTS IN FAM                                    
+              COLUMNS 24   - 24                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+        NUMBER OF ADULTS IN FAMILY                                            
+                                                                              
+   241  1. ONE                                                                
+   968  2. TWO                                                                
+   140  3. THREE                                                              
+   28   4. FOUR                                                               
+   13   5. FIVE                                                               
+   0    6. SIX                                                                
+   0    7. SEVEN                                                              
+   0    8. EIGHT OR MORE                                                      
+   0    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0009    NAME-AGE OF RESPONDENT                                          
+              COLUMNS 25   - 26                                               
+              NUMERIC                                                         
+              MD 99                                                           
+                                                                              
+        AGE OF RESPONDENT                                                     
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+   16   99. NA                                                                
+                                                                              
+==============================                                                
+VAR MN0010    NAME- AGE OF HEAD                                               
+              COLUMNS 27   - 27                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   AGE OF HEAD                                                                
+                                                                              
+   58   1. 18-24                                                              
+   249  2. 25-34                                                              
+   319  3. 35-44                                                              
+   285  4. 45-54                                                              
+   241  5. 55-64                                                              
+   224  6. 65 AND OVER                                                        
+   14   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0011    NAME- R BETTER FINANCIALLY THAN LAST YEAR                       
+              COLUMNS 28   - 28                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+        Q1. WE ARE INTERESTED IN HOW PEOPLE ARE GETTING ALONG                 
+        FINANCIALLY THESE DAYS. WOULD YOU SAY THAT YOU AND YOUR               
+        FAMILY ARE BETTER OFF OR WORSE OFF FINANCIALLY THAN YOU WERE          
+        A YEAR AGO.                                                           
+                                                                              
+   373  1. BETTER                                                             
+   653  3. SAME, PRO-CON                                                      
+   337  5. WORSE                                                              
+   20   8. UNCERTAIN                                                          
+   7    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0012    NAME- MAKE MORE MONEY THAN LAST YEAR                            
+              COLUMNS 29   - 29                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+        Q2. ARE YOU PEOPLE MAKING AS MUCH MONEY NOW AS YOU WERE A YEAR        
+                                                                              
+   AGO, OR MORE, OR LESS.                                                     
+   447  1. MORE NOW                                                           
+   650  3. ABOUT THE SAME                                                     
+   278  5. LESS NOW                                                           
+   15   9. NA     DK                                                          
+                                                                              
+==============================                                                
+VAR MN0013    NAME- PEOPLE WORRY ABOUT NEXT YEAR                              
+              COLUMNS 30   - 30                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q3.  DO YOU THINK PEOPLE ABOUND HERE HAVE ANY WORRIES AB0UT HOW            
+        THEY'LL GET ALONG IN THE NEXT YEAR OR SO. I'M SPEAKING OF             
+        PEOPLE LIKE YOURSELF AND YOUR FRIENDS.                                
+                                                                              
+   576  1. YES, THERE ARE WORRIES                                             
+   60   3. A FEW PEOPLE HAVE WORRIES (MANY OR MOST PEOPLE DON'T)              
+   647  5. NO, THERE ARE NO WORRIES AT ALL                                    
+   94   8. DK                                                                 
+   13   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0014    NAME- PEOPLE BETTER FINANCIALLY NEXT YEAR                       
+              COLUMNS 31   - 31                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q4.  NOW LOOKING AHEAD - DO YOU THINK THAT A YEAR FROM NOW YOU             
+        PEOPLE WILL BE BETTER OFF FINANCIALLY, OR WORSE OFF, OR JUST          
+        ABOUT THE SAME AS NOW.                                                
+                                                                              
+   426  1. BETTER OFF                                                         
+   652  3. SAME                                                               
+   73   5. WORSE OFF                                                          
+   232  8. UNCERTAIN                                                          
+   7    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0015    NAME- IN FEW YES R HAVE BETTER INCOME                           
+              COLUMNS 32   - 32                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+   Q5.  A FEW YEARS FROM NOW, DO YOU THINK YOU AND YOUR FAMILY WILL           
+        HAVE A BETTER INCOME THAN YOU HAVE NOW, OR WILL YOU BE IN             
+        ABOUT THE SAME SITUATION, OR A LESS SATISFACTORY SITUATION.           
+                                                                              
+   471  1. BETIER OFF THEN                                                    
+   66   2. BETTER WITH QUALIFICATIONS. THE SAME OR BETTER                     
+   471  3. SAME. MAYBE BETTER OFF, MAYBE WORSE. BETTER IN SOME WAYS,          
+              WORSE IN OTHERS                                                 
+   34   4. WORSE WITH QUALIFICATIONS. THE SAME OR WORSE                       
+   77   5. WORSE OFF THEN                                                     
+   77   6. DEPENDS                                                            
+   29   7. R SPEAKS ONLY OF WHAT HE HOPES, NO INDICATIONS OF WHAT HE          
+             REALLY EXPECTS                                                   
+   133  8. CAN'T SAY, WOULDN'T SAY, IMPOSSIBLE TO KNOW                        
+   32   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0016    NAME- R OWN HOME OR RENT                                        
+              COLUMNS 33   - 33                                               
+              NUMERIC                                                         
+              MD 7                                                            
+                                                                              
+   Q6.  DO YOU OWN THIS HOME, OR PAY RENT, OR WHAT.                           
+                                                                              
+   910  1. OWN HOME                                                           
+   418  2. PAY RENT                                                           
+   3    3. LIVE WITH FAMILY, FRIENDS, ETC.                                    
+   59   7. OTHER                                                              
+                                                                              
+==============================                                                
+VAR MN0017    NAME-LENGTH OF RES (HOME)                                       
+              COLUMNS 34   - 34                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   Q7.  HOW LONG HAVE YOU PEOPLE BEEN LIVING IN THIS HOUSE                    
+        (APARTMENT).                                                          
+                                                                              
+   210  1. LESS THAN ONE YEAR                                                 
+   258  2. 1-2 YEARS {INCLUDES 2 YEARS AND 6 MONTHS)                          
+   202  3. 3-4 YEARS (INCLUDES 4 YEARS AND 6 MONTHS)                          
+   274  4. 5-6 YEARS (INCLUDES 9 YEARS AND 6 MONTHS)                          
+   244  5. 10-19 YEARS (INCLUDES 19 YEARS AND 6 MONTHS)                       
+   200  6. 20 YEARS OR MORE                                                   
+   2    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0018 REF 0018                                                           
+              COLUMNS 35   - 35                                               
+              NUMERIC                                                         
+        NAME- PAST YEAR PRICES ROSE, FELL                                     
+              MD GE 8                                                         
+                                                                              
+   Q19. WE'D LIKE TO KNOW WHAT'S HAPPENED TO PRICES ON HOUSEHOLD              
+        IIENS AND CLOTHING HERE IN (COMMUNITY NAME) DURING THE PAST           
+        YEAR. HAVE THEY STAYED ABOUT THE SAME, GONE UP OR GONE DOWN.          
+        (GROCERIES WERE EXCLUDED)                                             
+                                                                              
+        1. PRICES WENT UP                                                     
+        2. SOME WENT UP, SOME STAYED THE SAME.  SOME WENT UP, NA, DK          
+              OTHERS                                                          
+        3. PRICES STAYED WHERE THEY WERE. SOME WENT UP, SOME WENT             
+               DOWN. SOME STAYED THE SAME, NA, DK OTHERS                      
+        4. SOME WENT DOWN, SOME STAYED THE SAME. SOME WENT DOWN, NA,          
+               DK OTHERS                                                      
+        5. PRICES WENT DOWN                                                   
+        8. DO, UNCERTAIN, DEPENDS                                             
+        9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0019    NAME- NEXT YR PRICES RISE/FALL                                  
+              COLUMNS 36   - 36                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q20. WHAT DO YOU EXPECT PRICES OF HOUSEHOLD ITEMS AND CL0THING             
+        WILL DO DURING THE NEXT YEAR OR SO - STAY WHERE THEY ARE, GO          
+        UP, OR GO DOWN.                                                       
+                                                                              
+        ONE YEAR HH PRICE EXPECTATIONS                                        
+   549  1. PRICES WILL (PROBABLY) GO UP                                       
+   36   2. PRICES WILL EITHER STAY THE SAME OR GO UP. SOME WILL GO            
+           UP, SOME WILL STAY THE SANE                                        
+   456  3. PRICES WILL STAY ABOUT THE SAME. SOME WILL GO UP, SOME             
+           WILL GO DOWN, LEVEL OFF, EVEN OFF                                  
+   11   4. PRICES WILL EITHER STAY THE SAME OR GO DOWN. SOME WILL GO          
+           DOWN, SOME WILL STAY THE SAME                                      
+   83   5. PRICES WILL (PROBABLY) GO DOWN                                     
+   236  8. DK, UNCERTAIN, DEPENDS                                             
+   19   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0020    NAME- EXPECTS PRICE CHANGE TO BE GOOD/BAD                       
+              COLUMNS 37   - 37                                               
+              NUMERIC                                                         
+              MD 0 OR GE 6                                                    
+                                                                              
+   Q21. WOULD YOU SAY THAT THESE (RISING PRICES) (FALLING PRICES)             
+        (UNCHANGED PRICES) WOULD BE TO THE GOOD, OR TO THE BAD, OR            
+        WHAT.                                                                 
+                                                                              
+   459  1. GOOD (GOOD FOR US, GOOD FOR THE AVERAGE PERSON)                    
+   10   2. GOOD, IF CHANGE IS SLOW, GRADUAL, SMALL                            
+   22   3. MAKES NO DIFFERENCE                                                
+   443  5. BAD (BAD FOR US, BAD FOR AVERAGE PERSON)                           
+   67   6. PRO-CON -- GOOD FOR SOME PEOPLE, BAD FOR OTHERS. DEPENDS           
+           WHETHER PRODUCER OR CONSUMER                                       
+   60   8. DR                                                                 
+   74   9. NA                                                                 
+   255  0. INAP., CODED 8 OR 9 ON REF. NO. 19                                 
+                                                                              
+==============================                                                
+VAR MN0021    NAME- ELECTION OUTCOME EFFECT ON PRICES                         
+              COLUMNS 38   - 38                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q23. DO YOU THINK THE OUTCOME OF THE ELECTION WILL HAVE ANY                
+        EFFECT ON WHAT PRICES WILL DO IN THE NEXT FEW YEARS.                  
+                                                                              
+   683  1. YES                                                                
+   83   2. YES, WITH QUALIFICATIONS                                           
+   19   3. PRO-CON                                                            
+   42   4. NO, WITH QUALIFICATIONS                                            
+   341  5. NO                                                                 
+   195  8. DK, DEPENDS WHO WINS                                               
+   27   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0022    NAME- WHICH PARTY HAVE PRICE INCREASES                          
+              COLUMNS 39   - 39                                               
+              NUMERIC                                                         
+              MD 0 OR GE 8                                                    
+                                                                              
+   Q23A. (IF YES) UNDER WHICH OF THE TWO MAJOR PARTIES, IN YOUR               
+         OPINION, WOULD BE MORE LIKELY TO HAVE PRICE INCREASES - THE          
+         REPUBLICANS OR DEMOCRATS.                                            
+                                                                              
+   240  1. REPUBLICANS                                                        
+   46   3. NOT MUCH DIFFERENCE, NO DIFFERENCE                                 
+   407  5. DEMOCBATS                                                          
+   54   8. DK                                                                 
+   38   9. NA                                                                 
+   605  0. INAP., CODED 4, 5, 8 OR 9 ON REF. NO. 21                           
+                                                                              
+==============================                                                
+VAR MN0023    NAME- BUSINESS CONDITIONS GOOD NEXT YEAR                        
+              COLUMNS 40   - 40                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q45. NOW TURNING TO BUSINESS CONDITIONS IN THE COUNTRY AS A                
+        WHOLE-- DO YOU THINK THAT DURING THE NEXT TWELVE MONTHS WE'LL         
+        HAVE GOOD TIMES FINANCIALLY, OR BAD TIMES, OR WHAT.                   
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+   502  1. GOOD TIMES                                                         
+   212  2. GOOD, WITH QUALIFICATIONS                                          
+   128  3. PRO-CON                                                            
+   49   4. BAD, WITH QUALIFICATIONS                                           
+   87   5. BAD                                                                
+   382  8. UNCERTAIN, DK                                                      
+   30   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0024    NAME- PRESENT BUSINESS CONDITIONS BTR/WRS                       
+              COLUMNS 41   - 41                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q46. WOULD YOU SAY THAT AT PRESENT BUSINESS CONDITIONS ARE BETTER          
+        OR WORSE THAN THEY WERE A YEAR AGO.                                   
+                                                                              
+   254  1. BETTER                                                             
+   594  3. ABOUT THE SAME                                                     
+   495  5. WORSE                                                              
+   43   8. DK, DEPENDS                                                        
+   4    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0025    NAME- HEARD ABOUT PRICE OF STOCK                                
+              COLUMNS 42   - 42                                               
+              NUMERIC                                                         
+              MD GE 9                                                         
+                                                                              
+   Q47B, 47C. HAVE YOU HEARD OF ANYTHING ABOUT THE STOCK MARKET. I            
+              MEAN, WHAT HAS BEEN HAPPENING TO THE PRICES OF COMMON STOCK     
+              DURING THE LAST FEW MONTHS. (IF YES) WHAT HAVE YOU HEARD?       
+                                                                              
+   868  0. HEARD NOTHING                                                      
+   41   1. YES, STOCK MARKET WENT UP, GENERAL FAVORABLE COMMENTS              
+   117  2. YES, STOCK MARKET WENT UP AND DOWN, ZIGZAGGED, FLUCTUATED          
+   14   3. YES, NOT MUCH HAPPENED, REMAINED STABLE                            
+   278  4. YES, STOCK MARKET WENT DONN. GENERAL UNFAVORABLE COMMENTS          
+   16   5. YES, REFERS ONLY TO MOVEMENT OF SPECIFIC STOCKS (EITHER            
+        UP OR DOWN)                                                           
+   8    6. YES, NO FURTHER COMMENT. NA WHAT HEARD                             
+   48   9. NA. DK                                                             
+                                                                              
+==============================                                                
+VAR MN0026    NAME- BUSINESS CONDITIONS BTR NEXT YEAR                         
+              COLUMNS 43   - 43                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q48. AND HOW ABOUT A YEAR FROM NOW, DO YOU EXPECT THAT IN                  
+        THE COUNTRY AS A WHOLE BUSINESS CONDITIONS WILL BE BETTER OR          
+        WORSE THAN THEY ARE AT PRESENT, OR JUST AB0UT THE SAME.               
+                                                                              
+   429  1. BETTER                                                             
+   738  3. ABOUT THE SANE                                                     
+   58   5. WORSE                                                              
+   147  8. DK, DEPENDS                                                        
+   18   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0027    NAME- WORLD RELATIONS AFFECT BUSINESS COND.                     
+              COLUMNS 44   - 44                                               
+              NUMERIC                                                         
+              MD O OR GE 6                                                    
+                                                                              
+   Q49, 49A. HOW DO YOU THINK THE WAY THINGS ARE GOING IN THE WORLD           
+             TODAY - I MEAN THE COLD WAR AND OUR RELATIONS WITH               
+             RUSSIA - ARE AFFECTING BUSINESS CONDITIONS HERE AT               
+             HOME. DO YOU THINK THEY MAKE FOR GOOD TIMES, OR BAD              
+             TIMES, OR WHAT.                                                  
+                                                                              
+   283  0. NO EFFECT ON BUSINESS                                              
+   181  1. GOOD TIMES                                                         
+   52   2. GOOD TINES, QUALIFIED                                              
+   27   3. PRO-CON. ABOUT AVERAGE. FAIR TIMES                                 
+   59   4. BAD TIMES, QUALIFIED                                               
+   409  5. BAD TIMES                                                          
+   12   6. TEMPORARY GOOD TIMES. ARTIFICIAL GOOD TIMES (BROUGHT               
+           ABOUT BY COLD WAR, GOVERNMENT SPENDING). GOOD AT PRESENT,          
+           BUT BAD IN LONG RUN                                                
+   3    7. TEMPORARY BAD TIMES                                                
+   277  8. DK, DEPENDS                                                        
+   87   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0028    NAME- NEXT 5 YRS HAVE GOOD TIMES                                
+              COLUMNS 45   - 45                                               
+              NUMERIC                                                         
+              MD GE 5                                                         
+                                                                              
+   Q50, 50A. LOOKING AHEAD, WHICH WOULD YOU SAY IS MORE LIKELY -              
+             THAT IN THE COUNTRY AS A WHOLE WE WILL HAVE CONTINUOUS           
+             GOOD TIMES DURING THE NEXT FIVE YEARS OR SO, OR THAT             
+             WE WILL HAVE PERIOD OF WIDESPREAD UNEMPLOYMENT OR                
+             DEPRESSION, OR WHAT. (IF DON'T KNOW) ON WHAT DOES IT             
+             DEPEND IN YOUR OPINION.                                          
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+        EXPECTED BUSINESS CONDITIONS FIVE YEARS HENCE                         
+   310  0. (CONTINUOUS) GOOD TINES, BOOM PROSPERITY                           
+   140  1. GOOD TINES, QUALIFIED (NOT BAD)                                    
+   178  2. PRO-CON, SOME UNEMPLOYMENT AND DEPRESSION                          
+   65   3. BAD TIMES, QUALIFIED (NOT GOOD) (RECESSION)                        
+   169  4. BAD TIMES, DEPRESSION, WIDESPREAD UNEMPLOYMENT                     
+   36   5. THINGS WILL BE ABOUT THE SAME. THINGS GET BACK TO NORMAL           
+           (NA WHETHER 'SAME' OR 'NORMAL' MEANS GOOD TIMES 0R NOT)            
+           "DEPENDS"                                                          
+   66   6. DEPENDS ON COLD WAR, DEFENSE PROGRAM, AID TO ALLIES,               
+           INTERNATIONAL SITUATION, WAR                                       
+   145  7. DEPENDS ON GOVERNMENT POLICY (NO REFERENCES TO WAR OR              
+           DEFENSE), POLITICS, POLICIES OF ADMINISTRATION, OUTCOME OF         
+           ELECTION                                                           
+   177  8. DEPENDS ON OTHER. DK, CAN'T TELL                                   
+   104  9. NA (R SPEAKS ONLY OF HOPES AND WISHES) (BETTER OR WORSE            
+           THAN NOW-- COMPARATIVE ANSWERS)                                    
+                                                                              
+==============================                                                
+VAR MN0029    NAME- MUCH UNEMP. IN THIS COMMUNITY                             
+              COLUMNS 46   - 46                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+   Q51, 51A. IS THERE ANY UNEMPLOYMENT HERE IN (COMMUNITY NAME) THAT          
+   YOU HAVE HEARD OF. (IF YES) DOES IT INVOLVE MANY PEOPLE OR JUST A          
+   FEW?                                                                       
+                                                                              
+   315  1. YES, UNEMPLOYMENT, MANY PEOPLE INVOLVED                            
+   172  2. YES, UNEMPLOYMENT, QUITE A FEW PEOPLE INVOLVED-- R'S               
+            ANSWER SOMEWHERE BETWEEN MANY AND FEW. MENTIONS ONLY              
+            SPECIFIC INSTANCE                                                 
+   227  3. YES, UNEMPLOYMENT, A FEW PEOPLE INVOLVED                           
+   50   4. YES, UNEMPLOYMENT, NA HOW MANY PEOPLE INVOLVED                     
+   546  5. NO UNEMPLOYMENT. NONE THAT R KNOWS OF                              
+   13   6. UNCERTAIN, BUT THINKS THERE MAY BE SOME UNEMPLOYMENT               
+   55   8. DK                                                                 
+   12   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0030    NAME- PAST MONTHS UNEMP. INCREASE                               
+              COLUMNS 47   - 47                                               
+              NUMERIC                                                         
+              MD 0 OR GE 8                                                    
+                                                                              
+   Q51B.     WOULD YOU SAY UNEMPLOYMENT HERE HAS BEEN INCREASING OB           
+             DECREASING IN THE PAST FEW MONTHS, OR WAS THERE NO               
+             CHANGE?                                                          
+                                                                              
+   410  1. INCREASING                                                         
+   173  3. NO CHANGE                                                          
+   94   5. DECREASING                                                         
+   65   8. DK                                                                 
+   35   9. NA                                                                 
+   613  0. INAP., CODED 5, 8 OR 9 ON REF. NO. 29                              
+                                                                              
+==============================                                                
+VAR MN0031    NAME- NEXT YR WILL UNEMP INCREASE                               
+              COLUMNS 48   - 48                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q52. AND HOW ABOUT NEXT YEAR, 1961-- DO YOU THINK THAT THERE WILL          
+        BE MORE UNEMPLOYMENT THAN NOW, ABOUT THE SAME, OR LESS.               
+                                                                              
+   143  1. BORN IN 1961                                                       
+   780  3. ABOUT THE SAME                                                     
+   297  5. LESS IN 1961                                                       
+   153  8. DK. DEPENDS                                                        
+   17   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0032    NAME- WHO ELECTED PRES NEXT YR                                  
+              COLUMNS 49   - 49                                               
+              NUMERIC                                                         
+              MD 0 0R GE 8                                                    
+                                                                              
+   Q53. WHO DO YOU THINK WILL BE ELECTED PRESIDENT IN NOVEMBER?               
+                                                                              
+   247  1. NIXON (REPUBLICANS)                                                
+   341  2. KENNEDY (DEMOCRATS)                                                
+   182  8. DK (R ONLY SPEAKS OF HOPES)                                        
+   16   9. NA                                                                 
+   604  0. INAP. (INTERVIEW TAKEN AFTER ELECTION)                             
+                                                                              
+==============================                                                
+VAR MN0033    NAME- HOW PRES ELCTN AFFECT BUSINESS                            
+              COLUMNS 50   - 50                                               
+              NUMERIC                                                         
+              MD 0 OR GE 6                                                    
+                                                                              
+   Q54, 54A. WOULD YOU SAY THAT THE OUTCOME OF THE PRESIDENTIAL               
+             ELECTION WILL HAVE ANY EFFECT ON BUSINESS CONDITIONS             
+             IN THIS COUNTRY. (IF EFFECT) WILL IT IMPROVE 0R WILL             
+             IT SLOW DOWN BUSINESS?                                           
+                                                                              
+   278  O. NO EFFECT, IT WON'T MAKE ANY DIFFERENCE                            
+   606  1. BUSINESS WILL OR MAY IMPROVE (STAY GOOD)                           
+   25   2. THINGS ALWAYS PICK UP THE YEAR AFTER AN ELECTION. IMPROVE          
+           REGARDLESS OF WHO IS ELECTED                                       
+   86   3. YES, IT WILL MAKE A DIFFERENCE (NA WHETHER GOOD OR BAD)            
+   22   4. THINGS ARE ALWAYS SLOW THE YEAR AFTER AN ELECTION,                 
+           DETERIORATE REGARDLESS OF WHO IS ELECTED                           
+   69   5. BUSINESS WILL OR MAY DETERIORATE (STAY BAD)                        
+   10   6. FAVORS SOME GROUPS, NOT OTHERS                                     
+   55   7. DEPENDS ON OUTCOME                                                 
+   154  8. DK                                                                 
+   85   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0034    NAME- HOW PRES ELCTN CHANGE TAXES                               
+              COLUMNS 51   - 51                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q55. HOW ABOUT TAXES-- DO YOU EXPECT THE NEXT PRESIDENT TO                 
+        INCREASE OR DECREASE THE TAXES WE PAY, OR WILL THERE BE NO            
+        CHANGE IN YOUR OPINION.                                               
+                                                                              
+   580  1. INCREASE TAXES. PROBABLY INCREASE                                  
+   61   2. NO CHANGE OR INCREASE. MAY INCREASE                                
+   419  3. NO CHANGE. PROBABLY NO CHANGE                                      
+   8    4. NO CHANGE OR DECREASE. MAY DECREASE                                
+   62   5. DECREASE TAXES. PROBABLY DECREASE                                  
+   202  8. DK, DEPENDS                                                        
+   58   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0035    NAME- MILITARY EXPENDITURES INCRS                               
+              COLUMNS 52   - 52                                               
+              NUMERIC                                                         
+              MD GE 8                                                         
+                                                                              
+   Q56. IN YOUR OPINION SHOULD MllITARY EXPENDITURES, WHAT WE SPEND           
+        ON ARMS AND DEFENSE, BE INCREASED OR DECREASED NEXT YEAR, OR          
+        STAY ABOUT THE SAME.                                                  
+                                                                              
+   587  1. MILITARY EXPENDITURES SHOULD BE INCREASED                          
+   445  3. MILITARY EXPENDITURES SHOULD STAY ABOUT THE SAME                   
+   63   5. MILITARY EXPENDITURES SHOULD BE DECREASED                          
+   214  8. DK, DEPENDS                                                        
+   81   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0036A    NAME- IF DISARMAMENT USE OF MONEY SAVED                        
+              COLUMNS 53   - 53                                               
+              NUMERIC                                                         
+              MD 0 OR GE 7                                                    
+                                                                              
+   Q57. SOME PEOPLE SAY THAT THERE QILL BE SOME DISARMAMENT AND               
+        THEREFORE OUR GOVERNMENT WILL SPEND LESS ON ARMS AND                  
+        DEFENSE. SUPPOSE THIS IS THE CASE, WHAT WOULD YOU SAY SHOULD          
+        BE DONE WITH THE MONEY SAVED?                                         
+                                                                              
+   40   1. SHOULD BE USED TO INCREASE FINANCIAL HELP TO OTHER                 
+             COUNTRIES                                                        
+   176  2. SHOULD BE USED TO REDUCE GOVERNMENT DEBT                           
+   150  3. SHOULD BE USED TO REDUCE INCOME TAXES                              
+   138  4. SHOULD BE USED TO BUILD SCHOOLS, HIGHWAYS, DEVELOP                 
+             NATURAL RESOURCES, OTHER PUBLIC WORKS                            
+   250  5. SHOULD BE USED FOB PUBLIC WELFARE PROGRAMS - TO HELP               
+             NEEDY PEOPLE IN THE U.S., HELP THE AGED                          
+   131  6. EDUCATION (OTHER THAN SCHOOL BUILDING)                             
+   213  7. OTHER. VAGUE ANSWER. SHOULD BE SPREAD OVER ALL FIELDS              
+   233  8. DK                                                                 
+   190  9. NA                                                                 
+   2649 0. R DOES NOT BELIEVE LESS WILL BE SPENT ON ARMS AND                  
+             DEFENSE. NO SECOND OR THIRD MENTION                              
+                                                                              
+==============================                                                
+VAR MN0036B    NAME- IF DISARMAMENT USE OF MONEY SAVED                        
+              COLUMNS 54   - 54                                               
+              NUMERIC                                                         
+              MD 0 OR GE 7                                                    
+                                                                              
+   Q57. SOME PEOPLE SAY THAT THERE QILL BE SOME DISARMAMENT AND               
+        THEREFORE OUR GOVERNMENT WILL SPEND LESS ON ARMS AND                  
+        DEFENSE. SUPPOSE THIS IS THE CASE, WHAT WOULD YOU SAY SHOULD          
+        BE DONE WITH THE MONEY SAVED?                                         
+                                                                              
+   40   1. SHOULD BE USED TO INCREASE FINANCIAL HELP TO OTHER                 
+             COUNTRIES                                                        
+   176  2. SHOULD BE USED TO REDUCE GOVERNMENT DEBT                           
+   150  3. SHOULD BE USED TO REDUCE INCOME TAXES                              
+   138  4. SHOULD BE USED TO BUILD SCHOOLS, HIGHWAYS, DEVELOP                 
+             NATURAL RESOURCES, OTHER PUBLIC WORKS                            
+   250  5. SHOULD BE USED FOB PUBLIC WELFARE PROGRAMS - TO HELP               
+             NEEDY PEOPLE IN THE U.S., HELP THE AGED                          
+   131  6. EDUCATION (OTHER THAN SCHOOL BUILDING)                             
+   213  7. OTHER. VAGUE ANSWER. SHOULD BE SPREAD OVER ALL FIELDS              
+   233  8. DK                                                                 
+   190  9. NA                                                                 
+   2649 0. R DOES NOT BELIEVE LESS WILL BE SPENT ON ARMS AND                  
+             DEFENSE. NO SECOND OR THIRD MENTION                              
+                                                                              
+==============================                                                
+VAR MN0036M3    NAME- IF DISARMAMENT USE OF MONEY SAVED                       
+              MD 0 OR GE 7                                                    
+                                                                              
+   Q57. SOME PEOPLE SAY THAT THERE QILL BE SOME DISARMAMENT AND               
+        THEREFORE OUR GOVERNMENT WILL SPEND LESS ON ARMS AND                  
+        DEFENSE. SUPPOSE THIS IS THE CASE, WHAT WOULD YOU SAY SHOULD          
+        BE DONE WITH THE MONEY SAVED?                                         
+                                                                              
+   40   1. SHOULD BE USED TO INCREASE FINANCIAL HELP TO OTHER                 
+             COUNTRIES                                                        
+   176  2. SHOULD BE USED TO REDUCE GOVERNMENT DEBT                           
+   150  3. SHOULD BE USED TO REDUCE INCOME TAXES                              
+   138  4. SHOULD BE USED TO BUILD SCHOOLS, HIGHWAYS, DEVELOP                 
+             NATURAL RESOURCES, OTHER PUBLIC WORKS                            
+   250  5. SHOULD BE USED FOB PUBLIC WELFARE PROGRAMS - TO HELP               
+             NEEDY PEOPLE IN THE U.S., HELP THE AGED                          
+   131  6. EDUCATION (OTHER THAN SCHOOL BUILDING)                             
+   213  7. OTHER. VAGUE ANSWER. SHOULD BE SPREAD OVER ALL FIELDS              
+   233  8. DK                                                                 
+   190  9. NA                                                                 
+   2649 0. R DOES NOT BELIEVE LESS WILL BE SPENT ON ARMS AND                  
+             DEFENSE. NO SECOND OR THIRD MENTION                              
+                                                                              
+==============================                                                
+VAR MN0037    NAME- XRANK: INCRS FOREIGN AID                                  
+              COLUMNS 56   - 56                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+   Q57A.     HERE ARE SOME SUGGESTIONS THAT HAVE BEEN MADE. PLEASE            
+             TELL ME WHICH USE OF THE MONEY APPEARS BEST TO YOU,              
+             WHICH IS SECOND BEST, THIRD, ETC.                                
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+        A. SHOULD BE USED TO INCREASE FINANCIAL HELP TO OTHER                 
+           COUNTRIES.                                                         
+                                                                              
+   43   1. RANKED AS FIRST CHOICE                                             
+   65   2. RANKED AS SECOND CHOICE                                            
+   136  3. RANKED AS THIRD CHOICE                                             
+   141  4. RANKED AS FOURTH CHOICE                                            
+   769  5. RANKED AS FIFTH CHOICE                                             
+   2    6. TIED FOR FIRST AND SECOND CHOICE 0R SECOND AND THIRD               
+              CHOICE                                                          
+   8    7. TIED FOR THIRD AND FOURTH CHOICE OR FOURTH AND FIFTH               
+              CHOICE                                                          
+   226  9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0038    NAME- XRANK: REDUCE GOVT DEBT                                   
+              COLUMNS 57   - 57                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+        B. SHOULD BE USED TO REDUCE GOVERNMENT DEBT                           
+                                                                              
+   275  1. RANKED AS FIRST CHOICE                                             
+   195  2. RANKED AS SECOND CHOICE                                            
+   223  3. RANKED AS THIRD CHOICE                                             
+   398  4. RANKED AS FOURTH CHOICE                                            
+   127  5. RANKED AS FIFTH CHOICE                                             
+   5    6. TIED FOR FIRST AND SECOND CHOICE OR SECOND AND THIRD               
+             CHOICE OR FIRST, SECOND AND THIRD PLACE                          
+   9    7. TIED FOR THIRD AND FOURTH CHOICE OR FOURTH AND FIFTH               
+             CHOICE OR THIRD, FOURTH AND FIFTH PLACE                          
+   158  9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0039    NAME- XRANK: REDUCE INCOME TAXES                                
+              COLUMNS 58   - 58                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+        C. SHOULD BE USED TO REDUCE INCOME TAXES                              
+                                                                              
+   220  1. RANKED AS FIRST CHOICE                                             
+   281  2. RANKED AS SECOND CHOICE                                            
+   330  3. RANKED AS THIRD CHOICE                                             
+   275  4. RANKED AS FOURTH CHOICE                                            
+   126  5. RANKED AS FIFTH CHOICE                                             
+   3    6. TIED FOR FIRST AND SECOND CHOICE OR SECOND AND THIRD               
+             CHOICE                                                           
+   10   7. TIED FOR THIRD AND FOURTH CHOICE OR FOURTH AND FIFTH               
+             CHOICE                                                           
+   145  9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0040    NAME- XRANK: BUILD SCHOOLS, HIWYS                               
+              COLUMNS 59   - 59                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+        D. SHOULD BE USED TO BUILD SCHOOLS, HIGHWAYS, AND THE LIKE.           
+                                                                              
+   332  1. RANKED AS FIRST CHOICE                                             
+   423  2. RANKED AS SECOND CHOICE                                            
+   304  3. RANKED AS THIRD CHOICE                                             
+   150  4. RANKED AS FOURTH CHOICE                                            
+   33   5. RANKED AS FIFTH CHOICE                                             
+   4    6. TIED FOR FIRST AND SECOND CHOICE OR SECOND AND THIRD               
+              CHOICE                                                          
+   3    7. TIED FOR THIRD AND FOURTH CHOICE OR FOURTH AND FIFTH               
+              CHOICE                                                          
+   141  9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0041    NAME- XBANK: PUB WELFARE PROGRAMS                               
+              COLUMNS 60   - 60                                               
+              NUMERIC                                                         
+              MD GE 6                                                         
+                                                                              
+        E. SHOULD BE USED FOR PUBLIC HELPARE PROGRAMS - TO HELP               
+                                                                              
+        NEEDY PEOPLE IN THE U.S.                                              
+   426  1. RANKED AS FIRST CHOICE                                             
+   317  2. RANKED AS SECOND CHOICE                                            
+   237  3. RANKED AS THIRD CHOICE                                             
+   192  4. RANKED AS FOURTH CHOICE                                            
+   74   5. RANKED AS FIFTH CHOICE                                             
+   4    6. TIED FOR FIRST AND SECOND CHOICE OR SECOND AND THIRD               
+             CHOICE                                                           
+   6    7. TIED FOR THIRD AND FOURTH CHOICE OR FOURTH AND FIFTH               
+             CHOICE                                                           
+   134  9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0042    NAME- IF $200 EXTRA, HOW TO SPEND                               
+              COLUMNS 61   - 61                                               
+              NUMERIC                                                         
+              MD GE 7                                                         
+                                                                              
+   Q58. SUPPOSE IN THE NEXT YEAR YOUR FAMILY HAD SOME EXTRA MONEY--           
+        SAY A FEW HUNDRED MORE THAN YOU HAD THIS PAST YEAR. WHAT              
+        WOULD YOU DO WITH THIS MONEY?                                         
+                                                                              
+   853  1. SAVE ALL OF IT (INCLUDE DEBT REPAYMENT)                            
+   125  2. SPEND ON ASSET (HOUSE, FARM, BUSINESS)                             
+   330  3. SPEND ALL OF IT ON CONSUMER GOODS OR SERVICES, GIFTS,              
+           DONATIONS                                                          
+   45   4. SAVE SOME AND SPEND SOME                                           
+   5    7. OTHER COMBINATIONS                                                 
+   6    8. DK                                                                 
+   26   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0043    NAME- HEAD'S OCCUPATION                                         
+              COLUMNS 62   - 62                                               
+              NUMERIC                                                         
+              MD 0 OR GE9                                                     
+                                                                              
+   Q60, 60A. WHAT IS (HEAD'S) OCCUPATION.  (IF UNEMPLOYED) WHAT               
+             KIND OF WORK DOES (HEAD) USUALLY DO.                             
+                                                                              
+   123  1. PROFESSIONAL, TECHNICAL OR KINDRED WORKERS                         
+   195  2. SELF-EMPLOYED BUSINESSMEN AND ARTISANS. MANAGERS,                  
+           OFFICIALS AND PROPRIETORS                                          
+   150  3. CLERICAL AND KINDRED WORKERS, SALES PERSONNEL                      
+   398  4. CRAFTSMEN, FOREMEN AND KINDRED WORKERS. OPERATIVES AND             
+           KINDRED WORKERS                                                    
+   69   5. LABORERS (INCLUDES FARM LABORERS)                                  
+   80   6. SERVICE WORKERS                                                    
+   81   7. PARK OPERATORS, FARM MANAGERS, FARM FOREMAN                        
+   12   8. MEMBERS OF THE ARMED FORCES                                        
+   34   9. NA                                                                 
+   248  0. INAP. (E.G., RETIRED, HOUSEWIVES, STUDENTS AND THOSE WHO           
+        HAVE NO JOB DUE TO PROLONGED ILLNESS)                                 
+                                                                              
+==============================                                                
+VAR MN0044    NAME- DOES HEAD WORK FOR SELF                                   
+              COLUMNS 63   - 63                                               
+              NUMERIC                                                         
+              MD 0 OR GE 9                                                    
+                                                                              
+   Q6OB. DOES (HEAD) WORK FOR HIMSELF OR SOMEONE ELSE.                        
+                                                                              
+   225  1. SELF                                                               
+   885  2. SOMEONE ELSE                                                       
+   3    3. BOTH, MAJOR JOB IS FOR SELF                                        
+   2    4. BOTH, MAJOR JOB IS FOR SOMEONE ELSE                                
+   4    5. BOTH, DK WHICH IS MAJOR J08                                        
+   23   9. NA                                                                 
+   248  0. INAP., CODED 0 ON REF. NO. 43                                      
+                                                                              
+==============================                                                
+VAR MN0045    NAME- HEAD UNEMP SINCE JANUARY                                  
+              COLUMNS 64   - 64                                               
+              NUMERIC                                                         
+              MD 0 OR GE 9                                                    
+                                                                              
+   Q62. HAS (HEAD) BEEN UNEMPLOYED OR LAID OFF AT ANY TIME SINCE              
+        JANUARY 0F THIS YEAR.                                                 
+                                                                              
+   134  1. YES, SOME UNEMPLOYMENT                                             
+   741  5. NO, NOT LAID OFF AT ALL                                            
+   16   9. NA                                                                 
+   499  0. INAP., CODED 1, 3, 9, OR 0 ON REF. NO. 44                          
+                                                                              
+==============================                                                
+VAR MN0046    NAME- PARTY IDENTIFICATION                                      
+              COLUMNS 65   - 65                                               
+              NUMERIC                                                         
+              MD GE 7                                                         
+                                                                              
+   Q.P1, 1A. GENERALLY SPEAKING, DO YOU USUALLY THINK OF YOURSELF             
+             AS A REPUBLICAN, A DEMOCRAT, AN INDEPENDENT, OR WHAT.            
+             (IF INDEPENDENT OR OTHER) DO YOU THINK OF YOURSELF AS            
+             CLOSER TO REPUBLICAN OR DEMOCRATIC PARTY                         
+                                                                              
+   658  1. DEMOCRAT                                                           
+   135  2. INDEPENDENT CLOSER TO DEMOCRATS (YES, DEMOCRAT TO Q.               
+             P1A.)                                                            
+   95   3. INDEPENDENT (NO, NEITHER TO Q. P1A)                                
+   92   4. INDEPENDENT CLOSER TO REPUBLICANS (YES, REPUBLICANS TO Q.          
+              P1A)                                                            
+   343  5. REPUBLICAN                                                         
+   4    7. OTHER. MINOR PARTY AND REFUSED TO SAY                              
+   44   8. APOLITICAL                                                         
+   19   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0048    NAME- R EXPECT TO VOTE IN NOV.                                  
+              COLUMNS 67   - 67                                               
+              NUMERIC                                                         
+              MD O OR GE 8                                                    
+                                                                              
+   QP2. SO FAR AS YOU KNOW NOW, DO YOU EXPECT TO VOTE IN NOVEMBER OR          
+        NOT.                                                                  
+                                                                              
+   73   1. YES, DEFINITELY                                                    
+   529  2. YES                                                                
+   12   3. YES, QUALIFIED (I THINK SO, GUESS SO, PROBABLY WILL)               
+   3    4. PRO-CON, DEPENDS (I MAY, I MIGHT)                                  
+   7    5. NO, QUALIFIED (PROBABLY NOT, I MIGHT BUT PROBABLY WON'T)           
+   103  6. NO                                                                 
+   42   7. NO, DEFINITELY                                                     
+   4    8. DK                                                                 
+   13   9. NA                                                                 
+   604  0. INAP. (RESPONDENT INTERVIEWED AFTER PRESIDENTIAL                   
+             ELECTION)                                                        
+                                                                              
+==============================                                                
+VAR MN0049    NAME- R VOTE FOR PRES & FOR WHOM                                
+              COLUMNS 68   - 68                                               
+              NUMERIC                                                         
+              MD 0 OR GE 6                                                    
+                                                                              
+   QP2A, 2B. HOW DO YOU THINK YOU WILL VOTE FOR PRESIDENT IN THIS             
+             ELECTION. (IF PLANNING NOT TO VOTE OR UNDECIDED) IF              
+             YOU WERE GOING TO VOTE, HOW DO YOU THINK YOU WOULD               
+             VOTE FOR PRESIDENT IN THIS ELECTION.                             
+                                                                              
+   338  1. WILL VOTE DEMOCRATIC, FOR KENNEDY                                  
+   7    2. WILL VOTE DEMOCRATIC, FOR KENNEDY, WITH QUALIFICATIONS             
+   46   3. UNDECIDED, DEPENDS                                                 
+   12   4. WILL VOTE REPUBLICAN, FOR NIXON, WITH QUALIFICATIONS               
+   285  5. WILL VOTE REPUBLICAN, FOR NIXON                                    
+   3    6. WILL VOTE FOR OTHER PARTY OR CANDIDATE                             
+   16   7. REFUSED TO ANSWER                                                  
+   47   8. DK                                                                 
+   15   9. NA                                                                 
+   621  0. INAP., CODED 8, 9 OR 0 ON REF. NO 48                               
+                                                                              
+==============================                                                
+VAR MN0050    NAME- POST ELCTN-R VOTE FOR PRES                                
+              COLUMNS 69   - 69                                               
+              NUMERIC                                                         
+              MD 0 OR GE 8                                                    
+                                                                              
+   Q.P3, 3A. DO YOU REMEMBER WHETHER OR NOT YOU VOTED IN THE                  
+             NOVEMBER ELECTION. (IF 'YES, DID VOTE') HOW DID YOU              
+             VOTE FOR PRESIDENT.                                              
+                                                                              
+   218  1. VOTED - DEMOCRATIC                                                 
+   220  2. VOTED - REPUBLICAN                                                 
+   2    3. VOTED - OTHER                                                      
+   12   4. VOTED - REFUSED TO SAY                                             
+   2    5. VOTED - DK FOR WHOM                                                
+   2    6. VOTED - NA FOR WHOM                                                
+   131  7. DID NOT VOTE                                                       
+   4    8. DON'T REMEMBER IF VOTED                                            
+   13   9. NA WHETHER VOTED                                                   
+   786  0. INAP, (RESPONDENT INTERVIEWED BEFORE PRESIDENTIAL                  
+              ELECTION)                                                       
+                                                                              
+==============================                                                
+VAR MN0051    NAME- CHURCH PREFERENCE                                         
+              COLUMNS 70   - 70                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   QP4. IS YOUR CHURCH PREFERENCE PROTESTANT, CATHOLIC, OR JEWISH?            
+   9    0. NONE                                                               
+   1000 1. PROTESTANT                                                         
+   302  2. CATHOLIC                                                           
+   56   3. JEWISH                                                             
+   11   4. OTHER                                                              
+   12   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0052    NAME- R GO TO CHUBCH REGULARLY                                  
+              COLUMNS 71   - 71                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   QP5. WOULD YOU SAY YOU GO TO CHURCH REGULARLY, OFTEN, SELDOM, OR           
+        NEVER.                                                                
+   608  1. REGULARLY                                                          
+   231  2. OFTEN                                                              
+   447  3. SELDOM                                                             
+   93   4. NEVER                                                              
+   11   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0053    NAME- MARITAL STATUS OF HEAD                                    
+              COLUMNS 72   - 72                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   QP6. MARITAL STATUS OF HEAD                                                
+   341  1. SINGLE, WIDOWED, DIVORCED, SEPARATED                               
+   1046 2. MARRIED                                                            
+   3    9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0054    NAME- SEX OF RESPONDENT                                         
+              COLUMNS 73   - 73                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   QP7. SEX OF RESPONDENT                                                     
+   591  1. MALE                                                               
+   781  2. FEMALE                                                             
+   18   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0055    NAME- LIFE CYCLE                                                
+              COLUMNS 74   - 74                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+        LIFE CYCLE (BASED ON REF. NO. 53, AGE OF CHILDREN AND AGE OF          
+        HEAD)                                                                 
+                                                                              
+   53   0. YOUNG (UNDER 45), SINGLE                                           
+   61   1. YOUNG [UNDER 45), MARRIED, NO CHILDREN                             
+   153  2. MARRIED, CHILDREN, YOUNGEST 1-1/2 YEARS OR LESS                    
+   162  3. MARRIED, CHILDREN, YOUNGEST OVER 1-1/2 UP TO AND                   
+        INCLUDING 4-1/2 YEARS                                                 
+   285  4. MARRIED, CHILDREN, YOUNGEST OVER 4-1/2 YEARS UP TO AND             
+        INCLUDING 14-1/2 YEARS                                                
+   65   5. MARRIED, CHILDREN, YOUNGEST OVER 14-1/2 YEARS (UNDER 18)           
+   322  6. OLDER (45 OR OVER), MARRIED, NO CHILDREN                           
+   195  7. OLDER (45 OR OVER), SINGLE                                         
+   83   8. OTHER (INCLUDES DIVORCED, WIDOWED OR OTHER UNMARRIED               
+        PERSONS NITH CHILDREN)                                                
+   11   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0056    NAME- EDUCATION OF HEAD                                         
+              COLUMNS 75   - 75                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   Q.P9, A, B. C. EDUCATION OF HEAD                                           
+                                                                              
+          SEE APPENDIX NOTE                                                   
+                                                                              
+   453  1. GRADE SCHOOL (1-8). NONE                                           
+   195  2. SOME HIGH SCHOOL                                                   
+   71   3. SOME HIGH SCHOOL PLUS NON-ACADEMIC                                 
+   242  4. COMPLETED HIGH SCHOOL                                              
+   98   5. COMPLETED HIGH SCHOOL PLUS NON-ACADEMIC                            
+   159  6. SOME COLLEGE                                                       
+   156  7. HAS COLLEGE DEGREE                                                 
+   16   9. NA                                                                 
+                                                                              
+==============================                                                
+VAR MN0057    NAME- INC OF FAMILY IN 1960                                     
+              COLUMNS 76   - 77                                               
+              NUMERIC                                                         
+              MD 99                                                           
+                                                                              
+   Q.P10.    WOULD YOU TELL ME HOW MUCH INCOME YOU AND YOUR FAMILY            
+             WILL BE MAKING THIS CALENDAR YEAR, 1960. I MEAN BEFORE           
+             TAXES. DOES THAT INCLUDE THE INCOME OF EVERYONE IN THE           
+             FAMILY.                                                          
+   87   10. UNDER $1,000                                                      
+   122  11. $l,000-1,999                                                      
+   132  12. $2,000-2,999                                                      
+   148  13. $3,000-3,999                                                      
+   154  14. $4,000-4,999                                                      
+   188  15. $5,000-5,999                                                      
+   176  16. $6,000-7,499                                                      
+   162  17. $7,500-9,999                                                      
+   119  18. $10,000-14,999                                                    
+   25   19. $15,000-19,999                                                    
+   24   20. $20,000 AND OVER                                                  
+   53   99. NA                                                                
+                                                                              
+==============================                                                
+VAR MN0058    NAME- RACE OF RESPONDENT                                        
+              COLUMNS 78   - 78                                               
+              NUMERIC                                                         
+              MD 9                                                            
+                                                                              
+   Q.P11.    RACE OF RESPONDENT                                               
+   1214 1. WHITE                                                              
+   130  2. NEGRO                                                              
+   17   7. OTHER. PUERTO RICAN, MEXICAN                                       
+   29   9.  NA                                                                
+                                                                              
+==============================                                                

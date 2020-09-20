@@ -1,0 +1,74 @@
+Version 01 Codebook
+-------------------
+CODEBOOK APPENDIX FILE
+1960 MINOR ELECTION STUDY
+(1960.S)
+
+
+
+
+USER NOTE:
+This file has been converted to electronic format via OCR scanning. 
+As as result, the user is advised that some errors in character 
+recognition may have resulted within the text.
+
+
+
+>> 1960 MINOR REGION CODE (CENSUS DEFINITIONS - EXCEPT DELAWARE)
+                       /THIS IS THE FIRST DIGIT IN THE PSU, REF. NO. 3/
+           
+                  2. NORTHEAST - CONNECTICUT, DELAWARE (SOUTH BY
+                     CENSUS CLASSIFICATION), MAINE, MASSACHUSETTS,
+                     NEW HAMPSHIRE, NEW JERSEY, NEW YORK,
+                     PENNSYLVANIA, RHODE ISLAND, VERMONT
+                           
+              1,6,7. NORTH CENTRAL - ILLINOIS, INDIANA, IOWA,
+                     KANSAS, MICHIGAN, MINNESOTA, MISSOURI,
+                     NEBRASKA, NORTH DAKOTA, OHIO, SOUTH DAKOTA,
+                     WISCONSIN
+                    
+              3,4,5. SOUTH -ALABAMA, ARKANSAS, DISTRICT OF COLUMBIA,
+                     FLORIDA, GEORGIA, KENTUCKY, LOUISIANA,
+                     MARYLAND, MISSISSIPPI, NORTH CALIFORNIA,
+                     OKLAHOMA, SOUTH CAROLINA, TENNESSEE, TEXAS,
+                     VIRGINIA, NEST VIRGINIA
+                    
+              8,9,0. WEST - ARIZONA, CALIFORNIA, COLORADO, IDAHO,
+                     MONTANA, NEVADA, NEW MEXICO, OREGON, UTAH,
+                     WASHINGTON, WYOMING
+
+
+
+                     
+>> 1960 MINOR AGE OF RESPONDENT NOTE
+
+               ACTUAL AGE OF RESPONDENT IS CODED.
+
+
+ 
+>> 1960 MINOR REGIONAL NOTE
+
+               IF ONLY REGIONAL ANSWER WAS GIVEN, IT HAS CODED.
+
+
+          
+>> 1960 MINOR REGIONAL AND NATIONAL FRAME OF REFERENCE NOTE
+
+               IF R GAVE BOTH A REGIONAL AND A NATIONAL FRAME OF
+               REFERENCE, THE NATIONAL HAD PRIORITY. IF R JUST GAVE
+               THE REGIONAL, IT WAS CODED.
+
+
+           
+>> 1960 MINOR NOTE ABOUT INTERVIWER
+
+               THE INTERVIEWER SHOVED THE RESPONDENT A CARD WITH THE
+               FOLLOWING SUGGESTIONS LISTED: INCREASE FOREIGN AID, REDUCE
+               GOVERNMENT DEBT, REDUCE INCOME TAXES, BUILD SCHOOLS AND
+               HIGHWAYS, USE FOR PUBLIC WELFARE PROGRAMS.
+          
+>> 1960 MINOR LEVEL OF EDUCATION NOTE
+
+               CODERS HERE INSTRUCTED THAT CODES 6 (SOME COLLEGE) AND
+               7 (COLLEGE DEGREE) HAD PRIORITY OVER NON-ACADEMIC
+                TRAINING.

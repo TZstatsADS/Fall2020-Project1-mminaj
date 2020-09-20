@@ -1,0 +1,191 @@
+---
+title: "Project1 The Role of Religious Beliefs in Voting Behaviors"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+## Introduction
+America has always been a country with various religious beliefs and free religional practices. One's belief is powerful in impacting their mindset, decision making, actions and way of living, of course which includes political perspectives. This project aims to explore how religional beliefs play a role in affecting people's decision and behavior in voting using the dataset '1960 Minor Study' from ANES. 
+
+Some questions that are of our interests are as the following:
+
+1. What was the church activity like in 1960?
+2. What was the religion composition in 1960?
+3. How does various religious beliefs impact how people vote?
+
+In order to explore answers to these questions, I will be performing some data cleaning using appropriate R packages, check on basic data statistics and plotting of variables of interest.
+
+
+## Data Cleaning
+#### Installing and Loading Required Packages
+```{r, message=FALSE}
+packages.used=as.list(
+  c(
+  "tidyverse",
+  "haven",
+  "devtools",
+  "RColorBrewer",
+  "data.table",
+  "ggplot2",
+  "magrittr")
+)
+
+check.pkg = function(x){
+  if(!require(x, character.only=T)) install.packages(x, 
+                                                     character.only=T,
+                                                     dependence=T)
+}
+
+lapply(packages.used, check.pkg)
+```
+
+#### Read in Data
+```{r read in data, message = F}
+anes_dat <- read_dta("../data/NES60MIN.dta")
+```
+
+#### Check if there is any missing values.
+```{r}
+anes_dat[which(is.na(anes_dat)==T),] 
+```
+There is no rows containing any missing value, so we keep the data as it is. 
+
+#### Check basic data summaries of the dataset.
+```{r basic data summaries}
+num_resp <- nrow(anes_dat)
+num_var <- ncol(anes_dat)
+num_resp
+num_var
+```
+There are 1390 respondents and 62 variables of interest.
+
+#### Change Variable Names 
+```{r change variable names}
+names <- matrix(0, 1, dim(anes_dat)[2])
+for (i in 1:dim(anes_dat)[2]){
+  names[i] <- attr(anes_dat[[i]], 'label')
+  colnames(anes_dat)[i] <- names[i]
+}
+```
+Since there are quite many variables, I changed the names from specific codebook forms to actual names so that what each variable is will be more straightforward. 
+
+## Statistical Analysis
+In order to address the first question, we want to see whether people attended church and how frequently if they did during 1960s.
+```{r church attendence barplot}
+church_atten <- anes_dat$`60MIN:R GO TO CHURCH REGULARLY?`
+church_atten[which(church_atten==1)] <- 'Regularly'
+church_atten[which(church_atten==2)] <- 'Often'
+church_atten[which(church_atten==3)] <- 'Seldom'
+church_atten[which(church_atten==4)] <- 'Never'
+church_atten[which(church_atten==9)] <- 'NA'
+
+ggplot(anes_dat, aes(as.factor(church_atten))) +
+  geom_bar() +
+  geom_text(aes(label = ..count..), stat = 'count') +
+  labs(title = 'Church Attendence in 1960', x = 'Attendence Frequency') +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+Among the 1390 respondents who participated in the interview, about half of them say that they are a regular church attender, about another half say that they go to church somehow, only 104 people never attend church. This shows that most people who participated in the survey did conduct some religious activity in 1960. 
+
+To specifically identify the religious branch that each participant was affliated with, plot a barplot of the variable related to church preference. 
+```{r religion composition barplot}
+church_pref <- anes_dat$`60MIN:CHURCH PREFERENCE`
+church_pref[which(church_pref==0)] <- 'None'
+church_pref[which(church_pref==1)] <- 'Protestant'
+church_pref[which(church_pref==2)] <- 'Catholic'
+church_pref[which(church_pref==3)] <- 'Jewish'
+church_pref[which(church_pref==4)] <- 'Other'
+church_pref[which(church_pref==9)] <- 'NA'
+
+ggplot(anes_dat, aes(as.factor(church_pref))) +
+  geom_bar() +
+  geom_text(aes(label = ..count..), stat = 'count') +
+  labs(title = 'Religion Composition in 1960', x = 'Religions') +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+The relious belief of respondents who participated in the survey in 1960 mainly consisted of Protestant and Catholic. 
+
+Finally, it is of our main interest to explore the relationship between religious affliation and political views. We made a plot of election prediction grouped by church preference and voting behaviors grouped by church preference respectively.
+```{r}
+df1 <- anes_dat[-which(anes_dat$`60MIN:PRESIDENTIAL ELECTION PREDICTION`==0), ]
+pres_pred <- df1$`60MIN:PRESIDENTIAL ELECTION PREDICTION`
+pres_pred[which(pres_pred==1)] <- 'Nixon'
+pres_pred[which(pres_pred==2)] <- 'Kennedy'
+pres_pred[which(pres_pred==8)] <- 'DK'
+pres_pred[which(pres_pred==9)] <- 'NA'
+
+church_pref <- df1$`60MIN:CHURCH PREFERENCE`
+church_pref[which(church_pref==0)] <- 'None'
+church_pref[which(church_pref==1)] <- 'Protestant'
+church_pref[which(church_pref==2)] <- 'Catholic'
+church_pref[which(church_pref==3)] <- 'Jewish'
+church_pref[which(church_pref==4)] <- 'Other'
+church_pref[which(church_pref==9)] <- 'NA'
+
+ggplot(df1, aes(as.factor(church_pref), 
+                     fill = as.factor(pres_pred))) +
+  geom_bar(position = 'dodge') +
+  labs(title = '', x = 'Church Preference', fill = 'Presidential Election Prediction') +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+Among the Protestants, the supporters of Nixon greatly exceeds DK. 
+
+```{r}
+df2 <- anes_dat[-which(anes_dat$`60MIN:(POST-ELEC) HOW R VOTED FOR PRES`==0 | anes_dat$`60MIN:(POST-ELEC) HOW R VOTED FOR PRES`==9),]
+pres_vote <- df2$`60MIN:(POST-ELEC) HOW R VOTED FOR PRES`
+pres_vote[which(pres_vote==1)] <- 'Kennedy'
+pres_vote[which(pres_vote==2)] <- 'Kennedy(Qualif)'
+pres_vote[which(pres_vote==3)] <- 'Undecided'
+pres_vote[which(pres_vote==4)] <- 'Nixon(Qualif)'
+pres_vote[which(pres_vote==5)] <- 'Nixon'
+pres_vote[which(pres_vote==6)] <- 'Other'
+pres_vote[which(pres_vote==7)] <- 'Refuse'
+pres_vote[which(pres_vote==8)] <- 'DK'
+
+church_pref <- df2$`60MIN:CHURCH PREFERENCE`
+church_pref[which(church_pref==0)] <- 'None'
+church_pref[which(church_pref==1)] <- 'Protestant'
+church_pref[which(church_pref==2)] <- 'Catholic'
+church_pref[which(church_pref==3)] <- 'Jewish'
+church_pref[which(church_pref==4)] <- 'Other'
+church_pref[which(church_pref==9)] <- 'NA'
+
+ggplot(df2, aes(as.factor(church_pref), 
+                     fill = as.factor(pres_vote))) +
+  geom_bar(position = 'dodge') +
+  labs(title = '', x = 'Church Preference', fill = 'Who People Voted for')
+```
+Kennedy seems to have dominant votes among the Catholics, while the Protestants were more conserved about voting for him with certain qualifications. 
+
+```{r}
+df3 <- anes_dat[-which(anes_dat$`60MIN:PARTY IDENTIFICATION`==9),]
+party_id <- df3$`60MIN:PARTY IDENTIFICATION`
+party_id[which(party_id==1)] <- 'Dem'
+party_id[which(party_id==2)] <- 'Indep-Dem'
+party_id[which(party_id==3)] <- 'Indep'
+party_id[which(party_id==4)] <- 'Indep-Rep'
+party_id[which(party_id==5)] <- 'Rep'
+party_id[which(party_id==7)] <- 'Other'
+party_id[which(party_id==8)] <- 'Apolitical'
+
+church_pref <- df3$`60MIN:CHURCH PREFERENCE`
+church_pref[which(church_pref==0)] <- 'None'
+church_pref[which(church_pref==1)] <- 'Protestant'
+church_pref[which(church_pref==2)] <- 'Catholic'
+church_pref[which(church_pref==3)] <- 'Jewish'
+church_pref[which(church_pref==4)] <- 'Other'
+church_pref[which(church_pref==9)] <- 'NA'
+
+ggplot(df3, aes(as.factor(church_pref), 
+                     fill = as.factor(party_id))) +
+  geom_bar(position = 'dodge') +
+  labs(title = '', x = 'Church Preference', fill = 'Party Identification')
+```
+Among Protestants, the number of people who identify themselves as republicans exceed considerably every other party besides Democrat. While among Catholic believers, the dominant political party identification belongs to Democrat.
+
+## Summary
+The three plots show that the religious composition of each president candidate or political party does not seem to be drastically different. Among each religion group, the number of people who are in favor of the Democratic party and candidate is the largest. Protestants consisted the major part of the vote as previously identified. However, a further examination on the composition of religious believers within each political group gives a little bit more information regarding how Catholics and Protestants differ in their political views. Catholic believers seem to always have a dominantly strong preference towards the Demoratic party and candidates, but the number of Protestant believers who support Demoractic party/candidates and Republican part/candidtaes does not seem to differ too much.
+
+
+

@@ -1,0 +1,243 @@
+Version 01 Codebook
+-------------------
+CODEBOOK INTRODUCTION FILE
+1960 MINOR ELECTION STUDY
+(1960.S)
+
+
+
+
+USER NOTE:
+This file has been converted to electronic format via OCR scanning. 
+As as result, the user is advised that some errors in character 
+recognition may have resulted within the text.   
+
+
+
+
+
+
+
+   
+   
+                     AMERICAN NATIONAL ELECTION STUDIES
+
+
+                        THE 1960 MINOR ELECTION STUDY
+                        
+
+
+
+
+                        
+                           PRINCIPAL INVESTIGATOR
+                           
+                          POLITICAL BEHAVIOR PROGRAM
+                         
+                            SURVEY RESEARCH CENTER
+                            UNIVERSITY OF MICHIGAN
+                           
+
+
+                                
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+                
+
+
+                         ICPSR ARCHIVE STUDY NUMBER 7222
+                   
+                                 CONTENTS
+
+
+
+
+           Note: >>sections in the codebook introduction and
+           codebook appendix can be navigated in the
+           machine-readable files by searching ">>".
+
+
+
+
+INTRODUCTORY MATERIAL  (file int60min.cbk
+---------------------
+>> CODEBOOK INFORMATION 
+>> 1960 MINOR STUDY VARIABLE DESCRIPTION LIST
+
+
+
+CODEBOOK
+--------
+     1960 variables
+
+
+
+APPENDICES  (file app60min.cbk)
+----------
+>> 1960 MINOR REGION CODE 
+>> 1960 MINOR AGE OF RESPONDENT NOTE
+>> 1960 MINOR REGIONAL NOTE
+>> 1960 MINOR REGIONAL AND NATIONAL FRAME OF REFERENCE NOTE
+>> 1960 MINOR NOTE ABOUT INTERVIEWER
+>> 1960 MINOR LEVEL OF EDUCATION NOTE
+
+
+
+
+>> CODEBOOK INFORMATION
+
+The following example from the 1948 NES study provides the standard 
+format for codebook variable documentation. 
+
+Note that NES studies which are not part of the Time-Series usually
+omit marginals and the descriptive content in lines 2-5 (except for
+variable name).
+
+
+Line
+
+1  ==============================                                              
+2  VAR 480026    NAME-R NOT VT-WAS R REG TO VT                                 
+3                COLUMNS 61   - 61                                             
+4                NUMERIC                                                       
+5                MD=0 OR GE 8                                                  
+6                                                                              
+7                  Q. 17.  (IF R DID NOT VOTE)  WERE YOU REGISTERED (ELIGIBLE)
+8                  TO VOTE.                                                   
+9                  ...........................................................
+10                                                                            
+11            82       1.  YES                                                
+12           149       2.  NO                                                 
+13                                                                             
+14             0       8.  DK                                                 
+15             9       9.  NA                                                 
+16           422       0.  INAP., R VOTED                                     
+                                                                            
+
+
+Line 2 - VARIABLE NAME.  Note that in the codebook the variable name
+         (usually a 'number') does not include the "V" prefix which is 
+         used in the release SAS and SPSS data definition files
+         (.sas and .sps files) for all variables including those
+         which do not have 'number' names.  For example the variable
+         "VERSION" in the codebook is "VVERSION" in the data definition
+         files.
+
+Line 2 - "NAME".  This is the variable label used in the SAS and SPSS
+         data definition files (.sas and .sps files).  Some codebooks 
+         exclude this.
+
+Line 3 - COLUMNS.  Columns in the ASCII data file (.dat file).
+
+Line 4 - CHARACTER OR NUMERIC.  If numeric and the variable is a decimal
+         rather than integer variable, the numer of decimal places is 
+         also indicated (e.g. "NUMERIC  DEC 4")
+
+Line 5 - Values which are assigned to missing by default in the Study's
+         SAS and and SPSS data definition files (.sas and .sps files).
+
+Line 7 - Actual question text for survey variables or a description of 
+         non-survey variables (for example, congressional district).
+         Survey items usually include the question number (for example
+         "B1a.") from the Study questionnaire; beginning in 1996 
+         non-survey items also have unique item numbers (for example
+         "CSheet.1").
+
+Line 9 - A dashed or dotted line usually separates question text from
+         any other documentation which follows.
+
+Line 10- When present, annotation provided by Study staff is presented
+         below the question text/description and preceding code values.
+
+Lines 11-16
+         Code values are listed with descriptive labels.  Valid codes
+         (those not having 'missing' status in line 5) are presented
+         first, followed by the values described in line 5.  For
+         continuous variables, one line may appear providing the range
+         of possible values.  A blank line usually separates the 'valid'
+         and 'missing' values.
+
+Lines 11-16
+         Marginals are usually provided for discrete variables.  The
+         counts may be unweighted or weighted; check the Study codebook
+         introductory text to determine weight usage.
+
+>> 1960 MINOR STUDY VARIABLE DESCRIPTION LIST
+
+                                    
+       VARIABLE     VARIABLE NAME                                       
+       NUMBER
+   
+       VVERSION         NES VERSION NUMBER
+       VDSETNO          NES DATASET NUMBER
+       MN0001           ICPSR ARCHIVE NUMBER
+       MN0002           INTERVIEW NUMBER
+       MN0003           PRIMARY SAMPLING UNIT*                              
+       MN0004           SIZE OF PLACE
+       MN0005           ELLT CODE
+       MN0006           DATE OF INTERVIEW                                   
+       MN0007           WHO IS RESPONDENT
+       MN0008           NUMBER OF ADULTS IN FAMILY
+       MN0009           AGE OF RESPONDENT                                   
+       MN0010           AGE OF HEAD
+       MN0011           RESPONDENT BETTER FINANCIALLY THAN LAST YEAR
+       MN0012           HAKE MORE HONEY THAN LAST YEAR
+       MN0013           PEOPLE WORRY ABOUT NEXT YEAR
+       MN0014           PEOPLE BETTER FINANCIALLY NEXT YEAR                
+       MN0015           IN FEW YEARS RESPONDENT HAVE BETTER INCOME         
+       MN0016           RESPONDENT OWN HOME OR RENT                        
+       MN0017           LENGTH OF RESIDENCY (HOME)                         
+       MN0018           PAST YEAR PRICES ROSE OR FELL                      
+       MN0019           NEXT YEAR PRICES RISE OR FALL                      
+       MN0020           X PRICE CHANGE BE GOOD OR BAD
+       MN0021           ELECTION OUTCOME EFFECT PRICES
+       MN0022           WHICH PARTY HAVE PRICE INCREASE
+       MN0023           BUSINESS CONDITIONS GOOD NEXT YEAR                 
+       MN0024           PRESENT BUSINESS CONDITION BETTER OR WORSE         
+       MN0025           HEARD ABOUT PRICE OF STOCK                         
+       MN0026           BUSINESS CONDITIONS BETTER NEXT YEAR
+       MN0027           WOUND RELATIONSHIP EFFECT BUSINESS CONDITIONS
+       MN0028           NEXT FIVE YEARS HAVE GOOD TIMES
+       MN0029           MUCH UNEMPLOYMENT IN THIS COMMUNITY
+       MN0030           PAST MONTHS UNEMPLOYMENT INCREASE
+       MN0031           NEXT YEAR WILL UNEMPLOYMENT INCREASE
+       MN0032           WHO ELECTED PRESIDENT NEXT YEAR                     
+       MN0033           HOW PRESIDENTIAL ELECTION EFFECT BUSINESS
+       MN0034           HOW PRESIDENTIAL ELECTION CHANGE TAXES             
+       MN0035           MILITARY EXPENDITURES INCREASE                     
+       MN0036           IF DISARMAMENT USE MONEY SAVED
+       MN0037           X RANK-INCREASE FOREIGN AID
+       MN0038           X BANK-REDUCE GOVERNMENT DEBT
+       MN0039           X RANK-REDUCE INCOME TAXES
+       MN0040           X RANK-BUILD SCHOOLS, HIGHWAYS
+       MN0041           X RANK-PUBLIC WELFARE PROGRAMS
+       MN0042           IF TWO HUNDRED DOLLARS EXTRA, HON SPEND            
+       MN0043           HEAD'S OCCUPATION
+       MN0044           DOES HEAD WORK FOR SELF
+       MN0045           HEAD UNEMPLOYED SINCE JANUARY
+       MN0046           X HOW MANY WEEKS HEAD UNEMPLOYED IN 1960           
+       MN0047           PARTY IDENTIFICATION *
+       MN0048           RESPONDENT EXPECT TO VOTE IN NOVEMBER
+       MN0049           RESPONDENT VOTE FOR PRESIDENT AND FOR WHOM         
+       MN0050           POST-ELECTION RESPONDENT VOTE FOR PRESIDENT
+       MN0051           CHURCH PREFERENCE *
+       MN0052           RESPONDENT GO TO CHURCH REGULARLY
+       MN0053           MARITAL STATUS OF HEAD
+       MN0054           SEX OF RESPONDENT                                  
+       MN0055           LIFE CYCLE
+       MN0056           EDUCATION OF HEAD
+       MN0057           INCOME OF FAMILY IN 1960
+       MN0058           RACE OF RESPONDENT
+
